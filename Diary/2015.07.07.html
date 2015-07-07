@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="theme.css" />
+        <script src="d3/d3.min.js" charset="utf-8"></script>  
+		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <meta charset="utf-8" />
+
+                <style type="text/css">
+
+        .modbr{filter:alpha(opacity=50);-moz-opacity:0.8;width:auto !important;width:100%}
+       
+         @-webkit-keyframes fadeIn {
+         0% {
+         opacity: 0; /*初始状态 透明度为0*/
+         }
+         50% {
+         opacity: 0.5; /*中间状态 透明度为0*/
+         }
+         100% {
+         opacity: 1; /*结尾状态 透明度为1*/
+         }
+         }
+         @-webkit-keyframes fadeOut {
+         0% {
+         opacity: 1; /*初始状态 透明度为1*/
+         }
+         50% {
+         opacity: 0.5; /*中间状态 透明度为0.5*/
+         }
+         100% {
+         opacity: 0; /*结尾状态 透明度为0*/
+         }
+         }
+        .box{-webkit-animation-name: fadeIn; /*动画名称*/
+         -webkit-animation-duration: 2s; /*动画持续时间*/
+         -webkit-animation-iteration-count: 1; /*动画次数*/
+         -webkit-animation-delay: 0s; /*延迟时间*/}
+         #box2{-webkit-animation-name: fadeOut; /*动画名称*/
+         -webkit-animation-duration: 2s; /*动画持续时间*/
+         -webkit-animation-iteration-count: 1; /*动画次数*/
+         -webkit-animation-delay: 0s; /*延迟时间*/}
+
+            .ban_touming {
+                opacity: 0.5;
+                -moz-opacity: 0.5;
+                filter:alpha(opacity=50);
+            }
+
+
+        </style>
+
+        <title>Personal Site of Gen Li-Diaries</title>
+
+        <!-- Learn From The Internet -->
+        <script type="text/javascript">
+            function AutoResizeImage(maxWidth, maxHeight, objImg) {
+                var img = new Image();
+                img.src = objImg.src;
+                var hRatio;
+                var wRatio;
+                var Ratio = 1;
+                var w = img.width;
+                var h = img.height;
+                wRatio = maxWidth / w;
+                hRatio = maxHeight / h;
+                if (maxWidth == 0 && maxHeight == 0) {
+                    Ratio = 1;
+                } else if (maxWidth == 0) {//
+                    if (hRatio < 1) Ratio = hRatio;
+                } else if (maxHeight == 0) {
+                    if (wRatio < 1) Ratio = wRatio;
+                } else if (wRatio < 1 || hRatio < 1) {
+                    Ratio = (wRatio <= hRatio ? wRatio : hRatio);
+                }
+                if (Ratio < 1) {
+                    w = w * Ratio;
+                    h = h * Ratio;
+                }
+                objImg.height = h;
+                objImg.width = w;
+            }
+        </script>
+
+
+    </head>
+    <body
+        style="background-image: url(3.jpg);
+        background-repeat: no-repeat;
+        background-attachment:fixed;
+        background-size: 110% 110%;
+
+        font-family:'Microsoft Himalaya';
+        font-size:larger;">
+
+        <div style="position:fixed;left:0px;top:0px;width:2000px;height:200px;
+                             background-image:url(11.jpg);background-repeat:repeat-x;background-position-y:bottom"></div>
+        <div style="position:fixed;left:500px;top:250px;
+                                background-color:black;
+                                width:235px;
+                                height:400px">
+            <img src="1.jpg" border="0" width="0" height="0" onload="AutoResizeImage(320,220,this)"  alt="341 X 512" style="margin:5px">
+            <p><span style="color:wheat">Gen Li</span></p>
+        </div>
+        <div style="width:498px;height:700px;
+                    background-image:url(2.jpg);
+                    background-repeat:no-repeat;
+                    overflow:scroll;
+                    position:fixed;
+                    left:750px;
+                    top:250px">
+
+            <p style="color:magenta;font-family:'Microsoft YaHei';font-size:1.2em">Dear Diary,</p>
+            <p style="color:magenta;font-family:'Microsoft YaHei';font-size:1.2em">&nbsp&nbsp&nbsp It's quite hard to design a web site and even if you have an idea, you may not know how to make it come true.
+                 That's why we are here to learn css, html and js. It will take much time, keep gooing and never give up:)</p>
+        </div>
+    </body>
+</html>
