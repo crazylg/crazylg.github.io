@@ -18,7 +18,7 @@ function clickevent(id) {
             var innerimg = document.createElement("IMG");
 
             //the style of img
-            innerimg.src = document.getElementById(id).src;
+            innerimg.src = document.getElementById(id).src.replace("mini", "");
             var oriheight = innerimg.naturalHeight;
             var oriwidth = innerimg.naturalWidth;
             var imgheight = (window.innerHeight * 0.8).toString() + 'px';
