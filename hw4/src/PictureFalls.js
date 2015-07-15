@@ -123,7 +123,7 @@ function addPicture() {
         li.setAttribute("id", "Li" + (picturenum + 1).toString());
 
         var picture = document.createElement("IMG");
-        picture.src = "./img/" + (picturenum + 1) + ".jpg";
+        picture.src = "./img/mini" + (picturenum + 1) + ".jpg";
         picture.setAttribute("id", "img" + (picturenum + 1));
         console.info(picture.src);
         console.info(picture.getAttribute("id"));
