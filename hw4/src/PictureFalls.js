@@ -72,7 +72,12 @@ function clickevent(id) {
 
             body.appendChild(bgObj);
             body.appendChild(pic);
-            var picleft = window.innerWidth / 2 - pic.clientWidth / 2;
+//             if ((window.innerHeight * 0.8 / img_info[Number(id.replace("img", ""))].height * img_info[Number(id.replace("img", ""))].width + window.innerWidth * 0.175) / 2 > 0.45 * window.innerWidth) {
+//                 var picleft = window.innerWidth / 12;
+//             }
+//             else {
+                var picleft = window.innerWidth / 2 - (window.innerHeight * 0.8 / img_info[Number(id.replace("img", ""))].height * img_info[Number(id.replace("img", ""))].width + window.innerWidth * 0.175) / 2;
+          /*  }*/
             pic.style.left = picleft + "px";
 
             pic.addEventListener("click", function () {
