@@ -36,6 +36,11 @@ function clickevent(id) {
         document.getElementById(id).addEventListener("click", function (e) {
             var pic = document.createElement("DIV");
             var comment = document.createElement("DIV");
+            var comment1 = document.createElement("DIV");
+            var comment2 = document.createElement("DIV");
+            var comment3 = document.createElement("DIV");
+            var button1 = document.createElement("BUTTON");
+            var button2 = document.createElement("BUTTON");
             var innerimg = document.createElement("IMG");
 
             //the style of img
@@ -44,14 +49,35 @@ function clickevent(id) {
             var oriwidth = innerimg.naturalWidth;
             var imgheight = (window.innerHeight * 0.8).toString() + 'px';
             innerimg.style.cssText = "float:left;z-index:9010;" + "height:" + imgheight;
-
+            var number1 = 0;
+            var number2 = 1;
+            var number3 = 2;
             //the style of comment
             var commentwidth = (window.innerWidth * 0.175).toString() + 'px';
             comment.style.cssText = "font-family:'Microsoft YaHei UI';text-indent: 2em;word-break: break-all;word-wrap:break-word;margin-left:10px;text-align:left;"
-                                  + "float:left;position:relative;top:20px;"
-                                  + "box-shadow:0 0 10px #888888;background: white;filter: alpha(Opacity=100); -moz-opacity:1;opacity:1; color: black;z-index:9005;width:"
+                                  + "float:left;position:relative;top:2.5%;buttom:20px"
+                                  + "box-shadow:0 0 10px #888888;background: white;filter: alpha(Opacity=100); -moz-opacity:1;opacity:1; color: black;z-index:9005;height:95%;width:"
                                   + commentwidth;
-            comment.innerText = comment_list[Number(id.replace("img", ""))];
+            comment.id = "comment" + Number(id.replace("img", ""));
+            comment1.style.cssText = "font-family:'Microsoft YaHei UI';text-indent: 2em;word-break: break-all;word-wrap:break-word;margin-left:10px;text-align:left;"
+                                  + "float:left;position:relative;top:2%;"
+                                  + "box-shadow:0 0 10px pink;background: white;filter: alpha(Opacity=100); -moz-opacity:1;opacity:1; color: black;z-index:9005;height:25%;width:95%";
+            comment1.innerText = comment_list[comment_liston[Number(id.replace("img", ""))][number1]];
+
+            comment2.style.cssText = "font-family:'Microsoft YaHei UI';text-indent: 2em;word-break: break-all;word-wrap:break-word;margin-left:10px;text-align:left;"
+                                  + "float:left;position:relative;top:3%;"
+                                  + "box-shadow:0 0 10px pink;background: white;filter: alpha(Opacity=100); -moz-opacity:1;opacity:1; color: black;z-index:9005;height:25%;width:95%";
+            comment2.innerText = comment_list[comment_liston[Number(id.replace("img", ""))][number2]];
+
+            comment3.style.cssText = "font-family:'Microsoft YaHei UI';text-indent: 2em;word-break: break-all;word-wrap:break-word;margin-left:10px;text-align:left;"
+                                  + "float:left;position:relative;top:4%;"
+                                  + "box-shadow:0 0 10px pink;background: white;filter: alpha(Opacity=100); -moz-opacity:1;opacity:1; color: black;z-index:9005;height:25%;width:95%";
+            comment3.innerText = comment_list[comment_liston[Number(id.replace("img", ""))][number3]];
+
+            button1.innerText = "Last page";
+            button2.innerText = "Next Page";
+            button1.style.cssText = "float:left;position:relative;top:10%;left:50%;background-color:pink"
+            button2.style.cssText = "float:right;position:relative;top:10%;background-color:pink"
 
             //the style of picture pop-up window
             pic.style.overflowY = 'scroll';
@@ -63,6 +89,11 @@ function clickevent(id) {
             pic.style.position = "fixed";
             pic.style.zIndex = 9000;
             pic.appendChild(innerimg);
+            comment.appendChild(comment1);
+            comment.appendChild(comment2);
+            comment.appendChild(comment3);
+            comment.appendChild(button1);
+            comment.appendChild(button2);
             pic.appendChild(comment);
 
             //the style of mask
@@ -80,14 +111,42 @@ function clickevent(id) {
           /*  }*/
             pic.style.left = picleft + "px";
 
-            pic.addEventListener("click", function () {
-                debugger;
+            innerimg.addEventListener("click", function () {
                 body.removeChild(pic);
                 body.removeChild(bgObj);
             }, false);
             bgObj.addEventListener("click", function () {
                 body.removeChild(pic);
                 body.removeChild(bgObj);
+            }, false);
+
+            button1.addEventListener("click", function () {
+                if (number1 > 0) {
+                    number1 = number1 - 3;
+                    number2 = number1 - 3;
+                    number3 = number1 - 3;
+                    comment1.innerText = comment_list[comment_liston[Number(id.replace("img", ""))][number1]];
+                    comment2.innerText = comment_list[comment_liston[Number(id.replace("img", ""))][number2]];
+                    comment3.innerText = comment_list[comment_liston[Number(id.replace("img", ""))][number3]];
+                }
+                else {
+                    alert("The First Page!");
+                }
+            }, false);
+
+            button2.addEventListener("click", function () {
+                if (number3 < 5) {
+                    number1 = number1 + 3;
+                    number2 = number1 + 3;
+                    number3 = number1 + 3;
+                    comment1.innerText = comment_list[comment_liston[Number(id.replace("img", ""))][number1]];
+                    comment2.innerText = comment_list[comment_liston[Number(id.replace("img", ""))][number2]];
+                    comment3.innerText = comment_list[comment_liston[Number(id.replace("img", ""))][number3]];
+                }
+                else
+                {
+                    alert("The Last Page!");
+                }
             }, false);
 
         }, false);
