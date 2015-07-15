@@ -1,0 +1,88 @@
+<!DOCTYPE xhtml>
+<html>
+<head>
+	<title>Picture Falls</title>
+    <link rel="stylesheet" type="text/css" href="src/Style.css" />
+</head>
+<body style="background-color:#f2f2f2; color:#6b7381;font-family:'Microsoft YaHei UI'">
+    <div id="head" style="text-align:center;background-color:pink;position:relative;height:100px">
+        <h1><span style="font-size:1.8em">Picture Falls</span></h1>
+    </div>
+
+
+    <div id="body">
+        <ul id="ui1" class="picture-column">
+        	<li id="Li1" class="picture-item">
+                <img src="./img/1.jpg" id ="img1">
+                <div class="info" style="text-align:right">
+                    <p>1111111111111</p>
+                </div>
+        	</li>
+            <li id="Li5" class="picture-item" >
+                <img src="./img/5.jpg" id ="img5">
+                <div class="info" style="text-align:right">
+                    <p>55555555555</p>
+                </div>
+            </li>
+        </ul>
+        <ul id="ui2" class="picture-column">
+        	<li id="Li2" class="picture-item">
+                <img src="./img/2.jpg" id ="img2">
+                <div class="info" style="text-align:right">
+                    <p>222222222222</p>
+                </div>
+        	</li>
+            <li id="Li6" class="picture-item" >
+                <img src="./img/6.jpg" id ="img6">
+                <div class="info" style="text-align:right">
+                    <p>6666666666666</p>
+                </div>
+            </li>
+        </ul>
+        <ul id="ui3" class="picture-column">
+        	<li id="Li3" class="picture-item">
+                <img src="./img/3.jpg" id ="img3">
+                <div class="info" style="text-align:right">
+                    <p>333333333333</p>
+                </div>
+        	</li>
+            <li id="Li7" class="picture-item" >
+                <img src="./img/7.jpg" id ="img7">
+                <div class="info" style="text-align:right">
+                    <p>77777777777777</p>
+                </div>
+            </li>
+        </ul>
+        <ul id="ui4" class="picture-column">
+        	<li id="Li4" class="picture-item">
+                <img src="./img/4.jpg" id ="img4">
+                <div class="info" style="text-align:right">
+                    <p>44444444444444</p>
+                </div>
+        	</li>
+            <li id="Li8" class="picture-item" >
+                <img src="./img/8.jpg" id ="img8">
+                <div class="info" style="text-align:right">
+                    <p>88888888888888888</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+    <div id="foot" style="text-align:center;position:relative;height:50px;bottom:0px;clear:both">
+        <h4>Copyright @ 2015 Gen Li. All rights reserved.</h4>
+    </div>
+<script type="text/javascript" src="resource/comment_list.json"></script>
+<script type="text/javascript" src="resource/location_list.json"></script>
+<script type="text/javascript" src="src/PictureFalls.js"></script>
+<script type="text/javascript" src="src/BackToTop.js"></script>
+ <script type="text/javascript">
+     /* var t = new clickevent("img1");*/
+     var t = new addEventToAllpicture();
+     var add = new addPicture();
+     var btn = new TOP();
+     btn.init();
+ </script>
+</body>
+</html>
