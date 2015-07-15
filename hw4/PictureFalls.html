@@ -1,7 +1,7 @@
-<!DOCTYPE xhtml>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 	<title>Picture Falls</title>
     <link rel="stylesheet" type="text/css" href="src/Style.css" />
     <script src="resource/jquery.js"></script>
@@ -78,8 +78,9 @@
     </div>
 <!-- <script type="text/javascript" src="resource/comment_list.json"></script> -->
 <script>
-    $.getJSON("http://crazylg.github.io/hw4/resource/comment_list.json", function (data) {
-        console.info(data);
+    
+    $.getJSON('http://crazylg.github.io/hw4/resource/comment_list.json', function (data) {
+        console.log(data);
     })
 </script>
 <script type="text/javascript" src="resource/location_list.json"></script>
