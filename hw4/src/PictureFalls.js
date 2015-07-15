@@ -1,3 +1,8 @@
+MAX_PICTURE_NUM = 50;
+picturenum = 8;
+currentLatitude = 40;
+currentLongitude = 116;
+
 function addEventToAllpicture() {
     var imglist = document.getElementsByTagName("IMG");
     for (var i = 0; i < imglist.length; i++) {
@@ -75,9 +80,6 @@ function clickevent(id) {
     }
 }
 
-MAX_PICTURE_NUM = 50;
-picturenum = 8;
-
 function addPicture() {
     function bindEvent(event, func) {
         if (window.addEventListener) {
@@ -112,8 +114,6 @@ function addPicture() {
             li3 = new createNewLi(uilist[2]);
         }
     });
-
-    function createNewLi(obj) {
         var li = document.createElement("li");
         li.setAttribute("class", "picture-item");
         li.setAttribute("id", "Li" + (picturenum + 1).toString());
@@ -123,6 +123,7 @@ function addPicture() {
         picture.setAttribute("id", "img" + (picturenum + 1));
         var div = document.createElement("DIV");
         div.setAttribute("class", "info");
+        navigator.geolocation.getCurrentPosition()
         div.setAttribute("style", "text-align:right");
         li.appendChild(picture);
         li.appendChild(div);
@@ -136,6 +137,34 @@ function addPicture() {
     };
 
 };
+
+function SuccessLocation(position) {
+    currentLatitude = position.coords.latitude;
+    currentLongitude = position.coords.longitude;
+}
+
+function errorHandler(err) {
+    if (err.code == 1) {
+        alert("Error: Access is denied!");
+    }
+
+    else if (err.code == 2) {
+        alert("Error: Position is unavailable!");
+    }
+}
+
+function getLocation() {
+
+    if (navigator.geolocation) {
+        // timeout at 60000 milliseconds (60 seconds)
+        var options = { timeout: 60000 };
+        navigator.geolocation.getCurrentPosition(showLocation, errorHandler, options);
+    }
+
+    else {
+        alert("Sorry, browser does not support geolocation!");
+    }
+}
 
 
 
