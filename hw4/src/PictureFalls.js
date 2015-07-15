@@ -8,10 +8,7 @@ function addEventToAllpicture() {
 function clickevent(id) {
     var body = document.getElementsByTagName("BODY")[0];
     var bgObj = document.createElement("DIV");
-    console.info(id);
-    console.info(document.getElementById(id).src);
     if ((document.getElementById(id).src.indexOf("resource") == -1) && (document.getElementById(id).onclick == null)) {
-        console.info(id);
         document.getElementById(id).addEventListener("click", function (e) {
             var pic = document.createElement("DIV");
             var comment = document.createElement("DIV");
@@ -38,21 +35,20 @@ function clickevent(id) {
             pic.style.backgroundColor = "wheat";
             pic.style.width = "auto";
             pic.style.height = "80%"
-            pic.style.marginLeft = "auto";
-            pic.style.marginRight = "auto";
             pic.style.top = "10%";
             pic.style.position = "fixed";
             pic.style.zIndex = 9000;
-            var picleft = getMiddle();
-            pic.style.left = picleft + "px";
+            pic.appendChild(innerimg);
+            pic.appendChild(comment);
+            /*var picleft = window.innerWidth / 2 - (window.innerHeight * 0.8 / oriheight * oriwidth + window.innerWidth * 0.175) / 2;*/
 
             //get the style:left to make pic at middle
-            function getMiddle() {
-                var picwidth = window.innerHeight * 0.8 / oriheight * oriwidth;
-                picwidth = picwidth + window.innerWidth * 0.175;
-                var picleft = window.innerWidth / 2 - picwidth / 2;
-                return picleft;
-            };
+//             function getMiddle() {
+//                 var picwidth = window.innerHeight * 0.8 / oriheight * oriwidth;
+//                 picwidth = picwidth + window.innerWidth * 0.175;
+//                 var picleft = window.innerWidth / 2 - picwidth / 2;
+//                 return picleft;
+//             };
 
             //the style of mask
             bgObj.style.cssText = "position:fixed;z-index: 8886;top: 0px;left: 0px;background: pink;filter: alpha(Opacity=50); -moz-opacity:0.5;opacity:0.5;";
@@ -60,11 +56,13 @@ function clickevent(id) {
             bgObj.style.height = '120%';
 
             body.appendChild(bgObj);
-            pic.appendChild(innerimg);
-            pic.appendChild(comment);
             body.appendChild(pic);
+            var picleft = window.innerWidth / 2 - pic.clientWidth / 2;
+            debugger;
+            pic.style.left = picleft + "px";
 
             pic.addEventListener("click", function () {
+                debugger;
                 body.removeChild(pic);
                 body.removeChild(bgObj);
             }, false);
@@ -91,17 +89,15 @@ function addPicture() {
     }//add event, consider the browser type
 
     bindEvent('scroll', function (e) {
-        debugger;
         var scrollT = document.documentElement.scrollTop || document.body.scrollTop;
         var scrollH = document.documentElement.scrollHeight || document.body.scrollHeight;
         var clientH = document.documentElement.clientHeight || document.body.clientHeight;
 
-        if ((scrollT >= (scrollH - clientH)) && (picturenum < MAX_PICTURE_NUM)) {
+        if ((scrollT >= (scrollH - clientH - 200)) && (picturenum < MAX_PICTURE_NUM)) {
             var uilist = [document.getElementById("ui1")
                          , document.getElementById("ui2")
                          , document.getElementById("ui3")
                          , document.getElementById("ui4")];
-            console.info(uilist);
             uilist.sort(function (a, b) {
                 if (a.clientHeight > b.clientHeight) {
                     return 1;
@@ -125,8 +121,6 @@ function addPicture() {
         var picture = document.createElement("IMG");
         picture.src = "./img/mini" + (picturenum + 1) + ".jpg";
         picture.setAttribute("id", "img" + (picturenum + 1));
-        console.info(picture.src);
-        console.info(picture.getAttribute("id"));
         var div = document.createElement("DIV");
         div.setAttribute("class", "info");
         div.setAttribute("style", "text-align:right");

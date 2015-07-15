@@ -1,4 +1,6 @@
-comment_list = ['烧烧烧！',
+{
+"total":50,
+"rows":['烧烧烧！',
                 '秀恩爱，分的快！',
                 '单身狗受到了一万点的伤害',
                 '这腿我能玩一年！',
@@ -49,3 +51,4 @@ comment_list = ['烧烧烧！',
 				'ENENENENENENENEN',
 				'AugustAugustEarnEarn',
 				'送人玫瑰，早晚会干的']
+}
