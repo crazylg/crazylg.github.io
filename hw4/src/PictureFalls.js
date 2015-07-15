@@ -8,7 +8,7 @@ function addEventToAllpicture() {
     for (var i = 0; i < imglist.length; i++) {
         var t = new clickevent(imglist[i].id.toString());
     }
-}
+};
 
 function clickevent(id) {
     var body = document.getElementsByTagName("BODY")[0];
@@ -48,12 +48,12 @@ function clickevent(id) {
             /*var picleft = window.innerWidth / 2 - (window.innerHeight * 0.8 / oriheight * oriwidth + window.innerWidth * 0.175) / 2;*/
 
             //get the style:left to make pic at middle
-//             function getMiddle() {
-//                 var picwidth = window.innerHeight * 0.8 / oriheight * oriwidth;
-//                 picwidth = picwidth + window.innerWidth * 0.175;
-//                 var picleft = window.innerWidth / 2 - picwidth / 2;
-//                 return picleft;
-//             };
+            //             function getMiddle() {
+            //                 var picwidth = window.innerHeight * 0.8 / oriheight * oriwidth;
+            //                 picwidth = picwidth + window.innerWidth * 0.175;
+            //                 var picleft = window.innerWidth / 2 - picwidth / 2;
+            //                 return picleft;
+            //             };
 
             //the style of mask
             bgObj.style.cssText = "position:fixed;z-index: 8886;top: 0px;left: 0px;background: pink;filter: alpha(Opacity=50); -moz-opacity:0.5;opacity:0.5;";
@@ -78,7 +78,7 @@ function clickevent(id) {
 
         }, false);
     }
-}
+};
 
 
 function addPicture() {
@@ -145,7 +145,7 @@ function addPicture() {
 function showLocation(position) {
     current_latitude = position.coords.latitude;
     current_longitude = position.coords.longitude;
-}
+};
 
 function errorHandler(err) {
     if (err.code == 1) {
@@ -155,7 +155,7 @@ function errorHandler(err) {
     else if (err.code == 2) {
         alert("Error: Position is unavailable!");
     }
-}
+};
 
 function getLocation() {
 
@@ -168,7 +168,7 @@ function getLocation() {
     else {
         alert("Sorry, browser does not support geolocation!");
     }
-}
+};
 
 
 
