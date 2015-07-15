@@ -96,7 +96,7 @@ function addPicture() {
         var scrollH = document.documentElement.scrollHeight || document.body.scrollHeight;
         var clientH = document.documentElement.clientHeight || document.body.clientHeight;
 
-        if ((scrollT >= (scrollH - clientH - 200)) && (picturenum < MAX_PICTURE_NUM)) {
+        if ((scrollT >= (scrollH - clientH)) && (picturenum < MAX_PICTURE_NUM)) {
             var uilist = [document.getElementById("ui1")
                          , document.getElementById("ui2")
                          , document.getElementById("ui3")
