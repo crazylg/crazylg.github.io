@@ -127,7 +127,6 @@ function addPicture() {
         picture.setAttribute("id", "img" + (picturenum + 1));
         var div = document.createElement("DIV");
         div.setAttribute("class", "info");
-        navigator.geolocation.getCurrentPosition()
         div.setAttribute("style", "text-align:right");
         li.appendChild(picture);
         li.appendChild(div);
