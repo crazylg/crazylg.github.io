@@ -4,11 +4,10 @@ current_latitude = 40;
 current_longitude = 116;
 
 function getDistance() {
+    debugger;
     var info = document.getElementsByClassName('info');
     for (var i = 0; i < info.length; i++) {
-
-        if (info[i].innetHtml === "") {
-            var num = Number(info.parentNode.id.replace("Li", ""));
+            var num = Number(info[i].parentNode.id.replace("Li", ""));
             var startLatRads = current_latitude / 180 * Math.PI;
             var startLongRads = current_longitude / 180 * Math.PI;
             var destLatRads = location_list[i].latitude / 180 * Math.PI;
@@ -19,8 +18,7 @@ function getDistance() {
                          + Math.cos(startLatRads) * Math.cos(destLatRads) * Math.cos(startLongRads - destLongRads)) * Radius;
 
             distance = parseInt(distance);
-            info[i].innerHtml = '<p>' + distance + 'KM' + '</p>';
-        }
+            info[i].innerHTML = '<p style="font-size:2em">' + distance + 'Km' + '</p>';
     }
 };
 
