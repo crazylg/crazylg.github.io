@@ -3,6 +3,27 @@ picturenum = 8;
 current_latitude = 40;
 current_longitude = 116;
 
+function getDistance() {
+    var info = document.getElementsByClassName('info');
+    for (var i = 0; i < info.length; i++) {
+
+        if (info[i].innetHtml === "") {
+            var num = Number(info.parentNode.id.replace("Li", ""));
+            var startLatRads = current_latitude / 180 * Math.PI;
+            var startLongRads = current_longitude / 180 * Math.PI;
+            var destLatRads = location_list[i].latitude / 180 * Math.PI;
+            var destLongRads = location_list[i].longitude / 180 * Math.PI;
+            var Radius = 6371;
+
+            var distance = Math.acos(Math.sin(startLatRads) * Math.sin(destLatRads)
+                         + Math.cos(startLatRads) * Math.cos(destLatRads) * Math.cos(startLongRads - destLongRads)) * Radius;
+
+            distance = parseInt(distance);
+            info[i].innerHtml = '<p>' + distance + 'KM' + '</p>';
+        }
+    }
+};
+
 function addEventToAllpicture() {
     var imglist = document.getElementsByTagName("IMG");
     for (var i = 0; i < imglist.length; i++) {
@@ -45,15 +66,6 @@ function clickevent(id) {
             pic.style.zIndex = 9000;
             pic.appendChild(innerimg);
             pic.appendChild(comment);
-            /*var picleft = window.innerWidth / 2 - (window.innerHeight * 0.8 / oriheight * oriwidth + window.innerWidth * 0.175) / 2;*/
-
-            //get the style:left to make pic at middle
-            //             function getMiddle() {
-            //                 var picwidth = window.innerHeight * 0.8 / oriheight * oriwidth;
-            //                 picwidth = picwidth + window.innerWidth * 0.175;
-            //                 var picleft = window.innerWidth / 2 - picwidth / 2;
-            //                 return picleft;
-            //             };
 
             //the style of mask
             bgObj.style.cssText = "position:fixed;z-index: 8886;top: 0px;left: 0px;background: pink;filter: alpha(Opacity=50); -moz-opacity:0.5;opacity:0.5;";
@@ -63,7 +75,6 @@ function clickevent(id) {
             body.appendChild(bgObj);
             body.appendChild(pic);
             var picleft = window.innerWidth / 2 - pic.clientWidth / 2;
-            debugger;
             pic.style.left = picleft + "px";
 
             pic.addEventListener("click", function () {
@@ -114,6 +125,8 @@ function addPicture() {
             li2 = new createNewLi(uilist[1]);
             li3 = new createNewLi(uilist[2]);
         }
+
+        var newdis = new getDistance();
     });
 
     function createNewLi(obj) {
