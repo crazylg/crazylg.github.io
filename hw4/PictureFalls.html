@@ -78,20 +78,10 @@
     </div>
 <!-- <script type="text/javascript" src="resource/comment_list.json"></script> -->
 <script>
-    $.ajax({    
-           url: './resource/comment_list.json',
-           type: 'POST',    
-           dataType: 'json',    
-           timeout: 5000,    
-           async: false,    
-           error: function(){    
-               alert('获取数据失败！');    
-           },    
-           success: function(json){    
-                jsObject  = eval(json);    
-           }    
-          });    
-
+    debugger;
+    $.getJSON("./resource/comment_list.json", function (data) {
+        console.info(data);
+    })
 </script>
 <script type="text/javascript" src="resource/location_list.json"></script>
 <script type="text/javascript" src="src/PictureFalls.js"></script>
