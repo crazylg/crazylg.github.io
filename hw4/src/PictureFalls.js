@@ -1,7 +1,7 @@
 MAX_PICTURE_NUM = 50;
 picturenum = 8;
-currentLatitude = 40;
-currentLongitude = 116;
+current_latitude = 40;
+current_longitude = 116;
 
 function addEventToAllpicture() {
     var imglist = document.getElementsByTagName("IMG");
@@ -80,6 +80,7 @@ function clickevent(id) {
     }
 }
 
+
 function addPicture() {
     function bindEvent(event, func) {
         if (window.addEventListener) {
@@ -114,6 +115,9 @@ function addPicture() {
             li3 = new createNewLi(uilist[2]);
         }
     });
+
+    function createNewLi(obj) {
+
         var li = document.createElement("li");
         li.setAttribute("class", "picture-item");
         li.setAttribute("id", "Li" + (picturenum + 1).toString());
@@ -138,9 +142,9 @@ function addPicture() {
 
 };
 
-function SuccessLocation(position) {
-    currentLatitude = position.coords.latitude;
-    currentLongitude = position.coords.longitude;
+function showLocation(position) {
+    current_latitude = position.coords.latitude;
+    current_longitude = position.coords.longitude;
 }
 
 function errorHandler(err) {
