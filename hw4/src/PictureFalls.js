@@ -135,13 +135,20 @@ function clickevent(id) {
             }, false);
 
             button2.addEventListener("click", function () {
-                if (number3 < 5) {
+                if (number3 < comment_liston[Number(id.replace("img", ""))].length) {
                     number1 = number1 + 3;
                     number2 = number1 + 3;
                     number3 = number1 + 3;
                     comment1.innerText = comment_list[comment_liston[Number(id.replace("img", ""))][number1]];
-                    comment2.innerText = comment_list[comment_liston[Number(id.replace("img", ""))][number2]];
-                    comment3.innerText = comment_list[comment_liston[Number(id.replace("img", ""))][number3]];
+                    if (comment_liston[Number(id.replace("img", ""))][number2]) {
+                        comment2.innerText = comment_list[comment_liston[Number(id.replace("img", ""))][number2]];
+                    }
+                    else { comment2.innerText = ""; }
+
+                    if (comment_liston[Number(id.replace("img", ""))][number3]) {
+                        comment3.innerText = comment_list[comment_liston[Number(id.replace("img", ""))][number3]];
+                    }
+                    else { comment3.innerText = ""; }
                 }
                 else
                 {
