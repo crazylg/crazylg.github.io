@@ -103,5 +103,6 @@ $(window).load(function () {
             var t = new sendMessage(current_nickname, message);
             $('#chatpart_inputtext').val('');
         }
+        $('#chatpart_inputtext').val('');
     });
 });
