@@ -97,7 +97,7 @@ $(window).load(function () {
         $('#chatpart_inputtext').val('');
     });
 
-    $('#chatpart_inputtext').keypress(function (e) {
+    $('#chatpart_inputtext').keyup(function (e) {
         if (e.keyCode == 13) {
             var message = $('#chatpart_inputtext').val();
             var t = new sendMessage(current_nickname, message);
