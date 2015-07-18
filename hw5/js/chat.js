@@ -43,13 +43,13 @@ function sendMessage(username, message) {
     var mydate = new Date();
     var time = mydate.toLocaleTimeString();
     if (message != "") {
-        messages.push({name:current_nickname, text:message, sendtime:time});
+        messages.push({ name: current_nickname, text: message, sendtime: time });
+        var box = document.createElement("DIV");
+        box.className = "message_send";
+        box.innerHTML = message + "</br>" + username + "&nbsp&nbsp" + time;
+        $('#chatpart_text').append(box);
+        document.getElementById('chatpart_text').scrollTop = document.getElementById('chatpart_text').scrollHeight;
     }
-    var box = document.createElement("DIV");
-    box.className = "message_send";
-    box.innerHTML = message + "</br>" + username + "&nbsp&nbsp" + time;
-    $('#chatpart_text').append(box);
-    document.getElementById('chatpart_text').scrollTop = document.getElementById('chatpart_text').scrollHeight;
 };
 
 //get message
