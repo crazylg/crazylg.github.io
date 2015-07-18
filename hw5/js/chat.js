@@ -96,4 +96,12 @@ $(window).load(function () {
         var t = new sendMessage(current_nickname, message);
         $('#chatpart_inputtext').val('');
     });
+
+    $('#chatpart_inputtext').keypress(function (e) {
+        if (e.keyCode == 13) {
+            var message = $('#chatpart_inputtext').val();
+            var t = new sendMessage(current_nickname, message);
+            $('#chatpart_inputtext').val('');
+        }
+    });
 });
