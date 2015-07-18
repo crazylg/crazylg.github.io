@@ -58,6 +58,7 @@
     left:7%;
     width:25%;
     height:85%;
+    overflow-y:auto;
 }
 
 #chatpart {
@@ -114,20 +115,80 @@
     min-height:35px;
 }
 
-/*@media screen and (max-width: 1000px) {
-    .me {
-        width:5%;
-    }
-    .Chat {
-        width:5%;
-    }
+#lock {
+    position:fixed;
+    background-color:white;
+    opacity:0.8;
+    width:102%;
+    height:100%;
+    z-index:50;
+    display:block;
 }
 
-@media screen and (max-width: 400px) {
-	.me {
-        width:50%;
-    }
-    .Chat {
-        width:50%;
-    }
-}*/
+#nickname {
+    background-color:skyblue;
+    position:fixed;
+    width:30%;
+    height:30%;
+    top:20%;
+    left:35%;
+    display:block;
+    z-index:60;
+}
+
+#nickname_input {
+    width:90%;
+    height:auto;
+    font-size:1.8em;
+    position:relative;
+    left:5%;
+    top:10%;
+}
+
+#creat_nickname_button {
+    width:60%;
+    height:auto;
+    font-size:2em;
+    position:relative;
+    left:20%;
+    top:50%;
+}
+
+.message_send {
+    position:relative;
+    width:55%;
+    height:auto;
+    margin-right:2%;
+    margin-top:1%;
+    background-color:skyblue;
+    color:whitesmoke;
+    text-align:left;
+    font-size:1.5em;
+    float:right;
+}
+
+.message_get {
+    position:relative;
+    width:55%;
+    height:auto;
+    margin-left:2%;
+    margin-top:1%;
+    background-color:skyblue;
+    color:black;
+    text-align:left;
+    font-size:1.5em;
+    float:left;
+}
+
+.usercard {
+    position:relative;
+    width:100%;
+    height:auto;
+    border:1px solid skyblue;
+    background-color:white;
+    color:black;
+    text-align:left;
+    font-family:'Microsoft YaHei UI';
+    font-size:1.5em;
+    float:left;
+}

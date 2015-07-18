@@ -3,18 +3,29 @@
   <head>
     <title>Gen Li's Chatting Room</title>
     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script src='./js/jquery.js'></script>
     <link rel="stylesheet" type="text/css" href="theme.css" />
     <link rel="stylesheet" type="text/css" href="./css/Style.css" />
     </head>
   <body style="min-width:600px;min-height:600px;">
+
+    <div id="lock">
+    </div>
+
+    <div id="nickname">
+        <input type="text" id="nickname_input" placeholder="Enter your nickname">
+        <button id="creat_nickname_button">Join in Chat</button>
+    </div>
+
     <div id="head">
         <button id="ME" class="me">me</button>
         <button id="CHAT" class="Chat">Chat</button>
     </div>
+
     <div id="userlist">
 
     </div>
+
     <div id="chatpart">
         <div id="chatpart_text">
         </div>
@@ -24,37 +35,7 @@
         <button id="chatpart_send">send</button>
     </div>
 
-    <script>
-        var myDataRef = new Firebase('https://blistering-torch-2081.firebaseio.com/');
-        $('#chatpart_inputtext').keypress(function (e) {
-            if (e.keyCode == 13) {
-                var text = $('#chatpart_inputtext').val();
+  <script type="text/javascript" src="./js/chat.js"></script>
 
-            }
-        })
-    </script>
-
-    <!-- <div id='messagesDiv'></div> -->
-    <!--     <input type='text' id='nameInput' placeholder='Name'> -->
-    <!--     <input type='text' id='messageInput' placeholder='Message'> -->
-    <!--     <script> -->
-    <!--         var myDataRef = new Firebase('https://blistering-torch-2081.firebaseio.com/'); -->
-    <!--         $('#messageInput').keypress(function (e) { -->
-    <!--             if (e.keyCode == 13) { -->
-    <!--                 var name = $('#nameInput').val(); -->
-    <!--                 var text = $('#messageInput').val(); -->
-    <!--                 myDataRef.push({ name: name, text: text }); -->
-    <!--                 $('#messageInput').val(''); -->
-    <!--             } -->
-    <!--         }); -->
-    <!--         myDataRef.on('child_added', function (snapshot) { -->
-    <!--             var message = snapshot.val(); -->
-    <!--             displayChatMessage(message.name, message.text); -->
-    <!--         }); -->
-    <!--         function displayChatMessage(name, text) { -->
-    <!--             $('<div/>').text(text).prepend($('<em/>').text(name + ': ')).appendTo($('#messagesDiv')); -->
-    <!--             $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight; -->
-    <!--         }; -->
-    <!--     </script>-->
   </body>
 </html>
