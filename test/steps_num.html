@@ -18,23 +18,28 @@
             <div class="col-xs-12 col-sm-12" style="padding:150px">
                 <h2>今日步数</h2>
                 <div class="round" style="text-align:center;font-family:'Microsoft YaHei UI';font-size:10em;color:white">
-                    <p id="data_today">9000</p>
+                    <p id="data_today">
+                        {{ today }}
+                    </p>
                 </div>
 
                 <h2>目标步数</h2>
                 <div class="round" style="background-color:pink;text-align:center;font-family:'Microsoft YaHei UI';font-size:10em;color:white;position:relative;top:10px">
-                    <p id="data_goal">10000</p>
+                    <p id="data_goal">
+                        {{ goal }}
+                    </p>
                 </div>
 
                 <h2>差距步数</h2>
+                {% if (today < goal) %}
                 <div class="round" style="background-color:coral;text-align:center;font-family:'Microsoft YaHei UI';font-size:10em;color:white;position:relative;top:10px">
-                    <p id="data_diff">-1000</p>
+                    <p id="data_diff">{{ goal-today }}</p>
                 </div>
-
-                <h2>差距步数</h2>
+                {% else %}
                 <div class="round" style="background-color:lightgreen;text-align:center;font-family:'Microsoft YaHei UI';font-size:10em;color:white;position:relative;top:10px">
-                    <p id="P1">1000</p>
+                    <p id="P1">{{ today - goal }}</p>
                 </div>
+                {% elseif %}
             </div>
         </div>
 
@@ -49,6 +54,7 @@
     <!-- js文件引入 -->
     <script src="./js/jquery.js"></script>
     <script src="./js/bootstrap.js"></script>
+
     <!-- ECharts单文件引入 -->
     <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
     <script type="text/javascript">
