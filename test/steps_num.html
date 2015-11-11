@@ -19,33 +19,27 @@
                 <h2>今日步数</h2>
                 <div class="round" style="text-align:center;font-family:'Microsoft YaHei UI';font-size:10em;color:white">
                     <p id="data_today">
-                        {{ today }}
+                        10000
                     </p>
                 </div>
 
                 <h2>目标步数</h2>
                 <div class="round" style="background-color:pink;text-align:center;font-family:'Microsoft YaHei UI';font-size:10em;color:white;position:relative;top:10px">
                     <p id="data_goal">
-                        {{ goal }}
+                        9900
                     </p>
                 </div>
 
                 <h2>差距步数</h2>
-                {% if (today < goal) %}
-                <div class="round" style="background-color:coral;text-align:center;font-family:'Microsoft YaHei UI';font-size:10em;color:white;position:relative;top:10px">
-                    <p id="data_diff">{{ goal-today }}</p>
-                </div>
-                {% else %}
                 <div class="round" style="background-color:lightgreen;text-align:center;font-family:'Microsoft YaHei UI';font-size:10em;color:white;position:relative;top:10px">
-                    <p id="P1">{{ today - goal }}</p>
+                    <p id="P1">100</p>
                 </div>
-                {% elseif %}
             </div>
         </div>
 
         <div class="row" id="suggestions">
             <div class="col-xs-12 col-sm-12" style="font-family:'Microsoft YaHei UI';color:black;font-size:4em">
-                <p style="white-space:normal" id="data_suggestion">我是对当天运动信息的描述啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</p>
+                <p style="white-space:normal" id="data_suggestion">干的不错，继续努力</p>
             </div>
         </div>
 
