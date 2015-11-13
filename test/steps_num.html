@@ -109,7 +109,15 @@
     series : [
         {
             name:'当日步数',
-            type:'line',
+            type: 'line',
+            itemstyle: {
+                normal: {
+                    linestyle: {
+                        color: 'lightblue',
+                        width: 3
+                    }
+                }
+            },
             data:[8000, 5000, 4000, 6500, 5000, 9000, 10000],
             markPoint : {
                 data : [
