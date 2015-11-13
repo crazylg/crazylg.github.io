@@ -105,7 +105,7 @@
             axisLabel: {
                 show:true,
                 textStyle: {
-                    fontSize: 20,
+                    fontSize: 25,
                 }
             }
         }
@@ -143,11 +143,24 @@
                     {
                         type: 'average',
                         name: '平均值',
-                        textStyle: {
-                            fontSize: 25
-                        }
                     }
-                ]
+                ],
+                itemStyle: {
+                    normal: {
+                        label: {
+                            textStyle: {
+                                fontSize:25
+                            },
+                        },
+                    },
+                    emphasis: {
+                        label: {
+                            textStyle: {
+                                fontSize: 25
+                            },
+                        },
+                    },
+                },
             }
         }
     ]
