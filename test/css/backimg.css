@@ -1,0 +1,18 @@
+.box{
+	top:50px;
+	position: relative;
+	width:740px;
+	height: 572px;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.intro-tables {
+	position: relative;
+}
+
+.intro-tables .box {
+	position: relative;
+	width: 100%;
+	margin: 20px 0;
+}
