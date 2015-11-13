@@ -1,8 +1,8 @@
 .box{
 	top:50px;
 	position: relative;
-	width:740px;
-	height: 572px;
+	width:700px;
+	height: 600px;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -15,4 +15,10 @@
 	position: relative;
 	width: 100%;
 	margin: 20px 0;
+}
+
+h2{
+	color: white;
+	font-family: 'Microsoft Yahei';
+	font-size:2em;
 }
