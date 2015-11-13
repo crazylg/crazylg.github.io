@@ -74,7 +74,10 @@
                 
                 var option = {
     title : {
-        text: '近一周每日步数'
+        text: '近一周每日步数',
+        textStyle: {
+            fontSize:25
+        }
     },
     tooltip : {
         trigger: 'axis'
@@ -87,14 +90,23 @@
         {
             type : 'category',
             boundaryGap : false,
-            data : ['周一','周二','周三','周四','周五','周六','周日']
+            data : ['周一','周二','周三','周四','周五','周六','周日'],
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    fontSize: 30,
+                }
+            }
         }
     ],
     yAxis : [
         {
             type : 'value',
-            axisLabel : {
-                formatter: '{value} '
+            axisLabel: {
+                show:true,
+                textStyle: {
+                    fontSize: 30,
+                }
             }
         }
     ],
@@ -119,7 +131,8 @@
                 }
             },
             data:[8000, 5000, 4000, 6500, 5000, 9000, 10000],
-            markPoint : {
+            markPoint: {
+                symbolSize: 100,
                 data : [
                     {type : 'max', name: '最大值'},
                     {type : 'min', name: '最小值'}
