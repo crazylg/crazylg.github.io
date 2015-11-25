@@ -6,15 +6,51 @@
     <link href="./css/bootstrap.css" rel="stylesheet">
     <link href="./css/color.css" rel="stylesheet">
     <link href="./css/round.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/jquery.range.css">
     <link href="./css/backimg.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+    <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+
 </head>
 <body style="background-image:url(./img/header.jpg)">
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
     <div class="container" style="width:94%;">
-
+        <div class="row intro-tables" id="line_chart" style="">
+        <h1 class="box" style="height:auto;color:white;text-align:center;font-size:5em;font-family:'Microsoft YaHei UI';">用户绑定</h1>
+        <div class="col-lg-11 info_form" style="margin-top:7%;color:white;text-align:center;font-size:2em;font-family:'Microsoft YaHei UI';">
+            <form method="post" action="demoform.asp">
+            <fieldset data-role="controlgroup" data-type="horizontal">
+            <label for="height">性别：</label>
+            <input type="radio" name="gender" id="male" value="male">
+            <label for="female">女性</label>
+            <input type="radio" name="gender" id="female" value="female">   
+            </fieldset>
+            <div data-role="fieldcontain1">
+            <label for="age">年龄:</label>
+            <input type="range" name="age" id="age" value="30" min="0" max="120">
+            </div>
+            <div data-role="fieldcontain2">
+            <label for="height">身高:</label>
+            <input type="range" name="height" id="height" value="170" min="120" max="220">
+            </div>
+            <div data-role="fieldcontain3">
+            <label for="weight">体重:</label>
+            <input type="range" name="weight" id="weight" value="60" min="30" max="180">
+            </div>
+            <input type="submit" data-inline="true" value="提交">
+            </form>
+        </div>
+        </div>
     </div>
 
     <!-- js文件引入 -->
-    <script src="./js/jquery.js"></script>
     <script src="./js/bootstrap.js"></script>
+    <script>
+    $(document).bind('mobileinit',function(){
+        $.mobile.pushStateEnabled = false;
+    });
+    </script>
+
 </body>
